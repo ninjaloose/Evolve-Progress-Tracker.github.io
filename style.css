@@ -30,8 +30,8 @@ a:hover, a:active {
 }
 
 #achievementList, #featList, #perkList, #crisprList {
-	padding-left: 15px;
-	padding-right: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 #achievementList>div>div:hover,
