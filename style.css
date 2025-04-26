@@ -3,7 +3,7 @@ body {
 	background-color: #1f2424;
 	color: #fff;
 	margin-bottom: 15px;
-	font-size: 14px;
+	font-size: 20px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 textarea {
-	font-size: 12px !important;
+	font-size: 18px !important;
 	min-height: 75px;
 }
 
@@ -30,8 +30,8 @@ a:hover, a:active {
 }
 
 #achievementList, #featList, #perkList, #crisprList {
-	padding-left: 15px;
-	padding-right: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 #achievementList>div>div:hover,
