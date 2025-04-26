@@ -1,13 +1,19 @@
-# karsen777.github.io
-**Progress Tracker for Evolve Incremental**
+Forked from Karsen777 to keep up to date with the latest achievements etc
 
-<https://karsen777.github.io>
+**Progress Tracker for Evolve Incremental**
 
 Currently tracks your progress on:
 + Achievements
 + Feats
 + Perks
 + CRISPR Upgrades
+
+
+_________________________________________
+Credit goes to their beginnings of work
+karsen777.github.io
+
+<https://karsen777.github.io>
 
 To-Do List:
 + Revamp filters & UI
