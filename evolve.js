@@ -982,30 +982,41 @@ const achieve_list = {
         'laser_shark','infested','mass_starvation','colonist','world_domination','illuminati',
         'syndicate','cult_of_personality','doomed','pandemonium','blood_war','landfill','seeder',
         'miners_dream','shaken','blacken_the_sun','trade','resonance','enlightenment','gladiator',
-        'corrupted'
+        'corrupted','red_dead','godslayer','traitor','doppelganger'
     ],
     species: [
-        'mass_extinction','extinct_human','extinct_elven','extinct_orc','extinct_cath','extinct_wolven','extinct_centaur','extinct_kobold',
-        'extinct_goblin','extinct_gnome','extinct_ogre','extinct_cyclops','extinct_troll','extinct_tortoisan','extinct_gecko','extinct_slitheryn',
+        'mass_extinction','extinct_human','extinct_elven','extinct_orc','extinct_cath','extinct_wolven','extinct_vulpine','extinct_centaur',
+        'extinct_rhinotaur','extinct_capybara','extinct_kobold','extinct_goblin',
+        //'extinct_rhinotaur','extinct_capybara','extinct_bearkin','extinct_porkenari','extinct_hedgeoken','extinct_kobold','extinct_goblin',
+        'extinct_gnome','extinct_ogre','extinct_cyclops','extinct_troll','extinct_tortoisan','extinct_gecko','extinct_slitheryn',
         'extinct_arraak','extinct_pterodacti','extinct_dracnid','extinct_entish','extinct_cacti','extinct_pinguicula','extinct_sporgar',
         'extinct_shroomi','extinct_moldling','extinct_mantis','extinct_scorpid','extinct_antid','extinct_sharkin','extinct_octigoran','extinct_dryad',
         'extinct_satyr','extinct_phoenix','extinct_salamander','extinct_yeti','extinct_wendigo','extinct_tuskin','extinct_kamel','extinct_balorg',
-        'extinct_imp','extinct_seraph','extinct_unicorn','extinct_junker','extinct_custom'
+        'extinct_imp','extinct_seraph','extinct_unicorn','extinct_synth','extinct_nano','extinct_ghast','extinct_shoggoth','extinct_dwarf',
+        'extinct_raccoon','extinct_lichen','extinct_wyvern','extinct_beholder','extinct_djinn','extinct_narwhal','extinct_bombardier','extinct_nephilim',
+        'extinct_junker','extinct_sludge','extinct_ultra_sludge','extinct_custom'
     ],
     genus: [
-        'creator','genus_humanoid','genus_animal','genus_small','genus_giant','genus_reptilian','genus_avian','genus_insectoid',
-        'genus_plant','genus_fungi','genus_aquatic','genus_fey','genus_heat','genus_polar','genus_sand','genus_demonic','genus_angelic'
+        'creator','genus_humanoid','genus_carnivore','genus_herbivore','genus_small','genus_giant','genus_reptilian','genus_avian',
+        //'creator','genus_humanoid','genus_carnivore','genus_omnivore','genus_herbivore','genus_small','genus_giant','genus_reptilian','genus_avian',
+        'genus_insectoid','genus_plant','genus_fungi','genus_aquatic','genus_fey','genus_heat','genus_polar','genus_sand','genus_demonic','genus_angelic',
+        'genus_synthetic','genus_eldritch'
     ],
     planet: [
-        'explorer','biome_grassland','biome_oceanic','biome_forest','biome_desert','biome_volcanic','biome_tundra','biome_hellscape','biome_eden',
+        'explorer','biome_grassland','biome_oceanic','biome_forest','biome_desert','biome_volcanic','biome_tundra',
+        'biome_savanna','biome_swamp','biome_ashland','biome_taiga','biome_hellscape','biome_eden',
         'atmo_toxic','atmo_mellow','atmo_rage','atmo_stormy','atmo_ozone','atmo_magnetic','atmo_trashed','atmo_elliptical','atmo_flare','atmo_dense',
-        'atmo_unstable'
+        'atmo_unstable','atmo_permafrost','atmo_retrograde','atmo_kamikaze'
     ],
     universe: [
         'vigilante','squished','double_density','cross','macro','marble','heavyweight','whitehole','heavy','canceled',
-        'eviltwin','microbang','pw_apocalypse','fullmetal','pass'
+        'eviltwin','microbang','pw_apocalypse','fullmetal','pass','soul_sponge','nightmare','escape_velocity'
     ],
-    challenge: ['joyless','steelen','dissipated','technophobe','iron_will','failed_history'],
+    challenge: [
+        'joyless','steelen','dissipated','technophobe','wheelbarrow','iron_will','failed_history','banana','pathfinder',
+        'ashanddust','exodus','obsolete','bluepill','retired','gross','lamentis','overlord',`adam_eve`,'endless_hunger',
+        //'what_is_best'
+    ],
 };
 
 const flairData = {
@@ -1025,7 +1036,7 @@ Object.keys(achieve_list).forEach(function(type){
     });
 });
 
-const feats = {
+export const feats = {
     utopia: {
         name: loc("feat_utopia_name"),
         desc: loc("feat_utopia_desc"),
@@ -1081,6 +1092,11 @@ const feats = {
         desc: loc("feat_steelem_desc"),
         flair: loc("feat_steelem_flair")
     },
+    banana: {
+        name: loc("feat_banana_name"),
+        desc: loc("feat_banana_desc",[500,500]),
+        flair: loc("feat_banana_flair")
+    },
     rocky_road: {
         name: loc("feat_rocky_road_name"),
         desc: loc("feat_rocky_road_desc"),
@@ -1095,6 +1111,16 @@ const feats = {
         name: loc("feat_equilibrium_name"),
         desc: loc("feat_equilibrium_desc"),
         flair: loc("feat_equilibrium_flair")
+    },
+    digital_ascension: {
+        name: loc("feat_digital_ascension_name"),
+        desc: loc("feat_digital_ascension_desc"),
+        flair: loc("feat_digital_ascension_flair")
+    },
+    grand_death_tour: {
+        name: loc("feat_grand_death_tour_name"),
+        desc: loc("feat_grand_death_tour_desc",[6]),
+        flair: loc("feat_grand_death_tour_flair")
     },
     novice: {
         name: loc("feat_novice_name"),
@@ -1121,6 +1147,11 @@ const feats = {
         desc: loc("feat_achievement_hunter_desc",[100]),
         flair: loc("feat_grandmaster_flair")
     },
+    god: {
+        name: loc("feat_god_name"),
+        desc: loc("feat_achievement_hunter_desc",[150]),
+        flair: loc("feat_god_flair")
+    },
     nephilim: {
         name: loc("feat_nephilim_name"),
         desc: loc("feat_nephilim_desc"),
@@ -1130,6 +1161,26 @@ const feats = {
         name: loc("feat_twisted_name"),
         desc: loc("feat_twisted_desc"),
         flair: loc("feat_twisted_flair")
+    },
+    slime_lord: {
+        name: loc("feat_slime_lord_name"),
+        desc: loc("feat_slime_lord_desc"),
+        flair: loc("feat_slime_lord_flair")
+    },
+    annihilation: {
+        name: loc("feat_annihilation_name"),
+        desc: loc("feat_annihilation_desc"),
+        flair: loc("feat_annihilation_flair")
+    },
+    immortal:{
+        name: loc("feat_immortal_name"),
+        desc: loc("feat_immortal_desc"),
+        flair: loc("feat_immortal_flair")
+    },
+    wish: {
+        name: loc("feat_wish_name"),
+        desc: loc("feat_wish_desc"),
+        flair: loc("feat_wish_flair")
     },
     friday: {
         name: loc("feat_friday_name"),
@@ -1155,6 +1206,21 @@ const feats = {
         name: loc("feat_egghunt_name"),
         desc: loc("feat_egghunt_desc"),
         flair: loc("feat_egghunt_flair")
+    },
+    launch_day: {
+        name: loc("feat_launch_day_name"),
+        desc: loc("feat_launch_day_desc"),
+        flair: loc("feat_launch_day_flair")
+    },
+    solstice: {
+        name: loc("feat_solstice_name"),
+        desc: loc("feat_solstice_desc"),
+        flair: loc("feat_solstice_flair")
+    },
+    firework: {
+        name: loc("feat_firework_name"),
+        desc: loc("feat_firework_desc"),
+        flair: loc("feat_firework_flair")
     },
     halloween: {
         name: loc("feat_boo_name"),
@@ -1208,7 +1274,7 @@ const perks = [
 ];
 
 // CRISPR upgrades from src/arpa.js -> const genePool = {
-const genePool = {
+export const genePool = {
     genetic_memory: {
         id: 'genes-genetic_memory',
         title: loc('arpa_genepool_genetic_memory_title'),
@@ -1525,7 +1591,7 @@ const genePool = {
         grant: ['plasma',2],
         cost: { Plasmid(){ return 165; } },
         action(){
-            if (payCrispr('mitosis')){
+            if (payCrispr('metaphase')){
                 return true;
             }
             return false;
@@ -1661,6 +1727,96 @@ const genePool = {
                 return true;
             }
             return false;
+        },
+        post(){
+            calcQueueMax();
+            calcRQueueMax();
+        }
+    },
+    precognition: {
+        id: 'genes-precognition',
+        title: loc('arpa_genepool_precognition_title'),
+        desc: loc('arpa_genepool_precognition_desc'),
+        reqs: { queue: 2 },
+        grant: ['queue',3],
+        condition(){ return global.stats.aiappoc > 0 ? true : false; },
+        cost: {
+            Plasmid(){ return 3500; },
+            Phage(){ return 100; },
+            AICore(){ return 1; }
+        },
+        action(){
+            if (payCrispr('precognition')){
+                return true;
+            }
+            return false;
+        }
+    },
+    governance: {
+        id: 'genes-governance',
+        title: loc('arpa_genepool_governance_title'),
+        desc: loc('arpa_genepool_governance_desc'),
+        reqs: { queue: 2 },
+        grant: ['governor',1],
+        cost: {
+            Plasmid(){ return 300; },
+            Phage(){ return 25; }
+        },
+        action(){
+            if (payCrispr('governance')){
+                return true;
+            }
+            return false;
+        }
+    },
+    civil_service: {
+        id: 'genes-civil_service',
+        title: loc('arpa_genepool_civil_service_title'),
+        desc: loc('arpa_genepool_civil_service_desc'),
+        reqs: { governor: 1 },
+        grant: ['governor',2],
+        cost: {
+            Plasmid(){ return 1000; },
+            Harmony(){ return 1; }
+        },
+        action(){
+            if (payCrispr('civil_service')){
+                return true;
+            }
+            return false;
+        },
+        post(){
+            if (global.race.hasOwnProperty('governor') && global.race.governor.hasOwnProperty('tasks')){
+                for (let i=0; i<6; i++){
+                    if (!global.race.governor.tasks.hasOwnProperty(`t${i}`)){
+                        global.race.governor.tasks[`t${i}`] = 'none';
+                    }
+                }
+            }
+            defineGovernor();
+        }
+    },
+    bureaucratic_efficiency: {
+        id: 'genes-bureaucratic_efficiency',
+        title: loc('arpa_genepool_bureaucratic_efficiency_title'),
+        desc: loc('arpa_genepool_bureaucratic_efficiency_desc'),
+        reqs: { governor: 2 },
+        grant: ['governor',3],
+        cost: {
+            Plasmid(){ return 2500; },
+            Artifact(){ return 1; }
+        },
+        action(){
+            if (payCrispr('bureaucratic_efficiency')){
+                return true;
+            }
+            return false;
+        },
+        post(){
+            defineGovernor();
+        },
+        flair(){
+            return loc('arpa_genepool_bureaucratic_efficiency_flair');
         }
     },
     hardened_genes: {
@@ -1764,6 +1920,25 @@ const genePool = {
             return false;
         }
     },
+    haggler: {
+        id: 'genes-haggler',
+        title: loc('arpa_genepool_haggler_title'),
+        desc: loc('arpa_genepool_haggler_desc'),
+        reqs: {trader:1},
+        condition(){
+            return global.stats.achieve['godslayer'] ? true : false;
+        },
+        grant: ['trader',2],
+        cost: { Supercoiled(){ return 10; } },
+        action(){
+            if (payCrispr('haggler')){
+                global.genes['trader'] = 2;
+                updateTrades();
+                return true;
+            }
+            return false;
+        }
+    },
     ancients: {
         id: 'genes-ancients',
         title: loc('arpa_genepool_ancients_title'),
@@ -1840,6 +2015,37 @@ const genePool = {
             return false;
         }
     },
+    doctrine: {
+        id: 'genes-doctrine',
+        title: loc('arpa_genepool_doctrine_title'),
+        desc: loc('arpa_genepool_doctrine_desc'),
+        reqs: { ancients: 5 },
+        condition(){
+            return global.stats.achieve['godslayer'] ? true : false;
+        },
+        grant: ['ancients',6],
+        cost: { Supercoiled(){ return 50; } },
+        action(){
+            if (payCrispr('doctrine')){
+                return true;
+            }
+            return false;
+        }
+    },
+    ideology: {
+        id: 'genes-ideology',
+        title: loc('arpa_genepool_ideology_title'),
+        desc: loc('arpa_genepool_ideology_desc'),
+        reqs: { ancients: 6 },
+        grant: ['ancients',7],
+        cost: { Supercoiled(){ return 75; } },
+        action(){
+            if (payCrispr('ideology')){
+                return true;
+            }
+            return false;
+        }
+    },
     transcendence: {
         id: 'genes-transcendence',
         title: loc('arpa_genepool_transcendence_title'),
@@ -1856,20 +2062,23 @@ const genePool = {
             return false;
         }
     },
-    /*preeminence: {
+    preeminence: {
         id: 'genes-preeminence',
         title: loc('arpa_genepool_preeminence_title'),
         desc: loc('arpa_genepool_preeminence_desc'),
-        reqs: {transcendence: 1, challenge:3},
+        reqs: { transcendence: 1, challenge:5, ancients: 7 },
         grant: ['transcendence',2],
-        cost: { Plasmid(){ return 4200; } },
+        cost: { 
+            Supercoiled(){ return 250; },
+            Harmony(){ return 10; },
+        },
         action(){
             if (payCrispr('preeminence')){
                 return true;
             }
             return false;
         }
-    },*/
+    },
     bleeding_effect: {
         id: 'genes-bleeding_effect',
         title: loc('arpa_genepool_bleeding_effect_title'),
@@ -1922,7 +2131,7 @@ const genePool = {
         reqs: {},
         grant: ['blood',1],
         condition(){
-            return global.resource.Blood_Stone.amount >= 1 ? true : false;
+            return global.prestige.Blood_Stone.count >= 1 ? true : false;
         },
         cost: {
             Plasmid(){ return 1000; },
@@ -1976,7 +2185,7 @@ const genePool = {
     },
 }
 
-const bloodPool = {
+export const bloodPool = {
     purify: {
         id: 'blood-purify',
         title: loc('arpa_blood_purify_title'),
@@ -2012,8 +2221,8 @@ const bloodPool = {
         reqs: {},
         grant: ['lust','*'],
         cost: {
-            Blood_Stone(){ return saveData.blood['lust'] ? (saveData.blood.lust * 15 + 15) : 15; },
-            Artifact(){ return (saveData.blood['lust'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['lust'] || 0)) * 15 + 15; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['lust'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2030,8 +2239,8 @@ const bloodPool = {
         reqs: {},
         grant: ['illuminate','*'],
         cost: {
-            Blood_Stone(){ return saveData.blood['illuminate'] ? (saveData.blood.illuminate * 12 + 12) : 12; },
-            Artifact(){ return (saveData.blood['illuminate'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['illuminate'] || 0)) * 12 + 12; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['illuminate'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2048,8 +2257,8 @@ const bloodPool = {
         reqs: {},
         grant: ['greed','*'],
         cost: {
-            Blood_Stone(){ return saveData.blood['greed'] ? (saveData.blood.greed * 16 + 16) : 16; },
-            Artifact(){ return (saveData.blood['greed'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['greed'] || 0)) * 16 + 16; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['greed'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2066,11 +2275,11 @@ const bloodPool = {
         reqs: {},
         grant: ['hoarder','*'],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: {
-            Blood_Stone(){ return saveData.blood['hoarder'] ? (saveData.blood.hoarder * 14 + 14) : 14; },
-            Artifact(){ return (saveData.blood['hoarder'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['hoarder'] || 0)) * 14 + 14; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['hoarder'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2087,8 +2296,8 @@ const bloodPool = {
         reqs: {},
         grant: ['artisan','*'],
         cost: {
-            Blood_Stone(){ return saveData.blood['artisan'] ? (saveData.blood.artisan * 8 + 8) : 8; },
-            Artifact(){ return (saveData.blood['artisan'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['artisan'] || 0)) * 8 + 8; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['artisan'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2105,11 +2314,11 @@ const bloodPool = {
         reqs: {},
         grant: ['attract','*'],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: {
-            Blood_Stone(){ return saveData.blood['attract'] ? (saveData.blood.attract * 4 + 4) : 4; },
-            Artifact(){ return (saveData.blood['attract'] || 0) % 5 === 0 ? 1 : 0; }
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['attract'] || 0)) * 4 + 4; },
+            Artifact(wiki){ return ((wiki || 0) + (global.blood['attract'] || 0)) % 5 === 0 ? 1 : 0; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
         action(){
@@ -2126,7 +2335,7 @@ const bloodPool = {
         reqs: {},
         grant: ['wrath','*'],
         cost: {
-            Blood_Stone(){ return saveData.blood['wrath'] ? (saveData.blood.wrath * 2 + 2) : 2; },
+            Blood_Stone(wiki){ return ((wiki || 0) + (global.blood['wrath'] || 0)) * 2 + 2; },
             Artifact(){ return 1; }
         },
         effect(){ return `<span class="has-text-caution">${loc('arpa_blood_repeat')}</span>`; },
@@ -2144,7 +2353,7 @@ const bloodPool = {
         reqs: {},
         grant: ['prepared',1],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: { Blood_Stone(){ return 50; } },
         action(){
@@ -2164,9 +2373,29 @@ const bloodPool = {
         reqs: { prepared: 1 },
         grant: ['prepared',2],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: { Blood_Stone(){ return 75; } },
+        action(){
+            if (payBloodPrice($(this)[0].cost)){
+                return true;
+            }
+            return false;
+        }
+    },
+    infernal: {
+        id: 'blood-infernal',
+        title: loc('arpa_blood_infernal_title'),
+        desc: loc('arpa_blood_infernal_desc'),
+        reqs: { prepared: 2 },
+        grant: ['prepared',3],
+        condition(){
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
+        },
+        cost: {
+            Blood_Stone(){ return 125; },
+            Artifact(){ return 1; }
+        },
         action(){
             if (payBloodPrice($(this)[0].cost)){
                 return true;
@@ -2209,7 +2438,7 @@ const bloodPool = {
         reqs: { unbound: 2 },
         grant: ['unbound',3],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: {
             Blood_Stone(){ return 250; },
@@ -2229,7 +2458,7 @@ const bloodPool = {
         reqs: { unbound: 3 },
         grant: ['unbound',4],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: { Blood_Stone(){ return 500; } },
         action(){
@@ -2246,7 +2475,7 @@ const bloodPool = {
         reqs: {},
         grant: ['aware',1],
         condition(){
-            return saveData.genes['blood'] && saveData.genes.blood >= 3 ? true : false;
+            return global.genes['blood'] && global.genes.blood >= 3 ? true : false;
         },
         cost: { Blood_Stone(){ return 10; } },
         action(){
@@ -3406,7 +3635,7 @@ const keywords = {
 	marble: ['universe'],
 	double_density: ['universe'],
 	pass: ['reset'],
-    trade: ['other'],
+	trade: ['other'],
 	explorer: ['biome', 'reset', 'perk'],
 	joyless: ['progression', 'challenge'],
 	steelen: ['challenge', 'reset', 'perk'],
@@ -3416,6 +3645,10 @@ const keywords = {
 	biome_desert: ['biome'],
 	biome_volcanic: ['biome'],
 	biome_tundra: ['biome'],
+	biome_savanna: ['biome'],
+	biome_swamp: ['biome'],
+	biome_ashland: ['biome'],
+	biome_taiga: ['biome'],
 	biome_hellscape: ['biome'],
 	biome_eden: ['biome', 'universe'],
 	creator: ['reset', 'perk'],
