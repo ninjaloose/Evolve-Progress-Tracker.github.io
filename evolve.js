@@ -1,6 +1,6 @@
 $(function(){
 
-const version = '1.0.27';
+const version = '1.4.5a';
 $('#version').text(version);
 
 const date = new Date();
