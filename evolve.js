@@ -1036,7 +1036,7 @@ Object.keys(achieve_list).forEach(function(type){
     });
 });
 
-export const feats = {
+const feats = {
     utopia: {
         name: loc("feat_utopia_name"),
         desc: loc("feat_utopia_desc"),
@@ -1274,7 +1274,7 @@ const perks = [
 ];
 
 // CRISPR upgrades from src/arpa.js -> const genePool = {
-export const genePool = {
+const genePool = {
     genetic_memory: {
         id: 'genes-genetic_memory',
         title: loc('arpa_genepool_genetic_memory_title'),
@@ -2185,7 +2185,7 @@ export const genePool = {
     },
 }
 
-export const bloodPool = {
+const bloodPool = {
     purify: {
         id: 'blood-purify',
         title: loc('arpa_blood_purify_title'),
